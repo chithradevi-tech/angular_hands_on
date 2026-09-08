@@ -1,0 +1,72 @@
+<div class="container">
+
+  <h1>Employee Directory</h1>
+
+  <p class="subtitle">
+    Find and view employee information
+  </p>
+
+  <!-- Search -->
+  <div class="filters">
+
+    <input
+      type="text"
+      placeholder="Search employee..."
+      [(ngModel)]="searchText"
+    />
+
+    <select [(ngModel)]="selectedDepartment">
+
+      @for (department of departments; track department) {
+        <option [value]="department">
+          {{ department }}
+        </option>
+      }
+
+    </select>
+
+  </div>
+
+
+  <!-- Employee Count -->
+
+  <p class="count">
+    Employees Found:
+    <strong>{{ filteredEmployees.length }}</strong>
+  </p>
+
+
+  <!-- Employee List -->
+
+  @if (filteredEmployees.length > 0) {
+
+    <div class="employee-grid">
+
+      @for (employee of filteredEmployees; track employee.id) {
+
+        <app-employee-card
+          [employee]="employee"
+          (viewEmployee)="viewEmployee($event)"
+        />
+
+      }
+
+    </div>
+
+  }
+
+  @else {
+
+    <div class="no-results">
+
+      <h2>No employees found</h2>
+
+      <p>
+        Try another name or department.
+      </p>
+
+    </div>
+
+  }
+
+</div>

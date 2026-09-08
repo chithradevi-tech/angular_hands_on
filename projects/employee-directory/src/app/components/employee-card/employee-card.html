@@ -1,0 +1,27 @@
+<div class="employee-card">
+
+  <div class="avatar">
+    {{ employee.name.charAt(0) }}
+  </div>
+
+  <h2>{{ employee.name }}</h2>
+
+  <p class="position">
+    {{ employee.position }}
+  </p>
+
+  <p>
+    <strong>Department:</strong>
+    {{ employee.department }}
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    {{ employee.location }}
+  </p>
+
+  <button (click)="onViewDetails()">
+    View Details
+  </button>
+
+</div>

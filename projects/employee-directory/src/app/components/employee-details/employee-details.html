@@ -1,0 +1,69 @@
+
+<div class="details-container">
+
+  @if (employee) {
+
+    <div class="details-card">
+
+      <div class="avatar">
+        {{ employee.name.charAt(0) }}
+      </div>
+
+      <h1>{{ employee.name }}</h1>
+
+      <p class="position">
+        {{ employee.position }}
+      </p>
+
+      <div class="details">
+
+        <div>
+          <strong>Email</strong>
+          <span>{{ employee.email }}</span>
+        </div>
+
+        <div>
+          <strong>Phone</strong>
+          <span>{{ employee.phone }}</span>
+        </div>
+
+        <div>
+          <strong>Department</strong>
+          <span>{{ employee.department }}</span>
+        </div>
+
+        <div>
+          <strong>Location</strong>
+          <span>{{ employee.location }}</span>
+        </div>
+
+        <div>
+          <strong>Salary</strong>
+          <span>₹{{ employee.salary }}</span>
+        </div>
+
+      </div>
+
+      <button (click)="goBack()">
+        Back to Employees
+      </button>
+
+    </div>
+
+  }
+
+  @else {
+
+    <div class="not-found">
+
+      <h2>Employee not found</h2>
+
+      <button (click)="goBack()">
+        Back to Employees
+      </button>
+
+    </div>
+
+  }
+
+</div>

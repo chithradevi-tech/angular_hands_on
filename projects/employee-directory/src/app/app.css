@@ -1,0 +1,22 @@
+.header {
+  background: #1e293b;
+  color: white;
+  padding: 15px 30px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
